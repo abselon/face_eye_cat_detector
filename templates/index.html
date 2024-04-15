@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Face and Eyes Detector</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Navbar Link</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="#">Navbar Link</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <br><br>
+            <h1 class="header center orange-text">Face and Eye Detector AND CATS</h1>
+            <div class="row center">
+                <h5 class="header col s12 light">do stuff LALALALALA
+                    <br>
+                </h5>
+            </div>
+
+            <div class="row">
+                <form action="/detect" method="POST" class="col s12" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="image" name="image" type="file" accept="image/*" class="validate"
+                                required>
+                            <label for="image">Upload an image</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <button type="submit" class="btn-large waves-effect waves-light orange">Detect Faces and
+                                Eyes and cattos</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div>
+            {% if filename %}
+            <img src="{{ url_for('static', filename = 'images/detected.jpg') }}" alt="Detected Image">
+
+            {% endif %}
+        </div>
+    </div>
+    <div class="container">
+        <div class="footer-copyright">
+            <div class="container">
+                Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">AbselonLuna</a>
+            </div>
+        </div>
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="/js/materialize.js"></script>
+        <script src="/js/init.js"></script>
+
+    </div>
+</body>
+
+</html>
