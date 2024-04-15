@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face and Eye Detector</title>
+    <!-- Add any additional CSS or JS links here -->
+</head>
+<body>
+
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <br><br>
+        <h1 class="header center orange-text">Face and Eye Detector</h1>
+        <div class="row center">
+            <h5 class="header col s12 light">Upload an image to detect faces and eyes</h5>
+            <br>
+        </div>
+
+        <div class="row">
+            <form action="/detect" method="POST" class="col s12" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="image" name="image" type="file" accept="image/*" class="validate" required>
+                        <label for="image">Upload an image</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <button type="submit" class="btn-large waves-effect waves-light orange">Detect Faces and Eyes</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>    {% if filename %}
+      <img src="{{ url_for('static', filename='images/detected.jpg') }}" alt="Detected Image">
+
+  {% endif %}</div>
+</div>
+
+</body>
+</html>
